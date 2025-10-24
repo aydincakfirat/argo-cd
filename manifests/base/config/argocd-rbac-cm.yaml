@@ -14,4 +14,5 @@ data:
     p, role:developer, applications, override, */*, allow
     p, role:developer, applications, update, */*, allow
     p, role:developer, applications, delete, */*, allow
+    p, role:developer, applications, action/*, */*, allow
     g, developer, role:developer
