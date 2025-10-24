@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+  configs:
+    params:
+      server.insecure: true
+    cm:
+      accounts.jenkins-sync-user: login, apiKey
+      accounts.flowe-sync-user: login, apiKey
+
+    rbac:
+      policy.default: role:none
+      scopes: "[groups, email]"
+      policy.csv: |
+        p, role:none, *, *, */*, deny
+        g, darwin-aws-k8s-argocd-users, role:admin
+ 
+        p, role:sync-only, applications, get, *, allow
+        p, role:sync-only, applications, sync, *, allow
+        p, role:sync-only, repositories, get, *, allow
+        p, role:sync-only, projects, get, *, allow
+ 
+        g, jenkins-sync-user, role:sync-only
+        g, flowe-sync-user, role:sync-only
