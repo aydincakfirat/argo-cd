@@ -7,13 +7,6 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   accounts.developer: apiKey, login
-  policy.csv: |
-    p, role:developer, applications, sync, */*, allow
-    p, role:developer, applications, get, */*, allow
-    p, role:developer, applications, override, */*, allow
-    p, role:developer, applications, update, */*, allow
-    g, developer, role:developer
-  policy.default: role:readonly
   ### Default configuration for ignoreResourceUpdates.
   # The ignoreResourceUpdates list contains K8s resource's properties that are known to be frequently updated
   # by controllers and operators. These resources, when watched by argo, will cause many unnecessary updates.
