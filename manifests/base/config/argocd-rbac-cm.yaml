@@ -5,6 +5,9 @@ metadata:
   labels:
     app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/part-of: argocd
+
+cm:
+  accounts.user1: apiKey, login
 data:
   accounts.user1: apiKey, login
   policy.csv: |
