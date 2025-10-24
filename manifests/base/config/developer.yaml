@@ -1,0 +1,9 @@
+kind: Account
+metadata:
+  name: developer
+  namespace: argocd
+spec:
+  enabled: true
+  capabilities:
+  - login
+  - apiKey
